@@ -1,0 +1,19 @@
+# Compiler
+.cache
+
+# Packages
+node_modules
+
+# Test
+coverage
+
+#Build
+dist
+out
+
+# Enviroment
+.env
+.env.local
+
+# Prisma
+migration_lock.toml
