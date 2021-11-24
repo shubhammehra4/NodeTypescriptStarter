@@ -1,6 +1,6 @@
 import pino from 'pino';
 
-const { NODE_ENV } = process.env;
+const { NODE_ENV, APP_NAME } = process.env;
 
 /**
  * Custom pino logger
@@ -21,8 +21,13 @@ const logger =
             messageFormat: '[{hostname}] {msg}',
           },
         },
-      }).child({}, { formatters: { bindings: () => ({ hostname: 'APP' }) } })
-    : pino({ level: 'info', base: undefined }).child({ hostname: 'APP' });
+        formatters: { bindings: () => ({ hostname: APP_NAME }) },
+      })
+    : pino({
+        level: 'info',
+        base: undefined,
+        formatters: { bindings: () => ({ hostname: APP_NAME }) },
+      });
 
 /**
  * Creates a child logger for a module
