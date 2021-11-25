@@ -30,11 +30,11 @@ const logger =
       });
 
 /**
- * Creates a child logger for a module
+ * Creates a logger for a specified module
  * @param {string} module name of the module, as hostname in Prod
  * @returns {pino.Logger} child pino logger
  */
-export const makeLogger = (module: string): pino.Logger => {
+export const makeModuleLogger = (module: string): pino.Logger => {
   return logger.child({}, { formatters: { bindings: () => ({ hostname: module }) } });
 };
 
