@@ -1,4 +1,4 @@
-import logger, { makeModuleLogger } from './utils/logger';
+import logger, { makeModuleLogger } from '@utils/logger';
 
 async function main() {
   const { APP_NAME, NODE_ENV, PORT } = process.env;

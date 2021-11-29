@@ -1,10 +1,11 @@
 import 'dotenv-safe/config';
-import main from './server';
+import main from '@src/server';
+import logger from '@utils/logger';
 
 main()
   .catch((error: unknown) => {
-    console.error(error);
+    logger.error(error);
   })
   .finally(() => {
-    console.error('Server going down bye...');
+    logger.info('Server going down bye...');
   });

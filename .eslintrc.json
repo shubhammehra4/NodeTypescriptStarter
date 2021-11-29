@@ -63,6 +63,7 @@
         "typedefs": true
       }
     ],
+    "max-classes-per-file": ["error", { "ignoreExpressions": true, "max": 2 }],
     "no-console": ["warn", { "allow": ["error", "time", "timeEnd"] }],
     "unicorn/prevent-abbreviations": "off",
     "unicorn/prefer-node-protocol": "off",
